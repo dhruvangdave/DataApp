@@ -1,0 +1,18 @@
+<?php
+
+header('Access-Control-Allow-Origin: *'); 
+header('Content-Type: application/json'); 
+header('Access-Control-Allow-Methods: POST'); 
+header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type, Authorization, Access-Control-Allow-Methods, X-Requested-With'); 
+
+include('function.php'); 
+
+$data = json_decode(file_get_contents("php://input"), true);
+
+$emp_id = $data["eid"]; 
+$emp_name = $data["ename"]; 
+$emp_surname = $data["esurname"]; 
+$emp_address = $data["eaddress"];
+
+    $dataList = updateDataList($emp_id, $emp_name, $emp_surname, $emp_address);
+    echo $dataList;
