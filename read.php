@@ -18,6 +18,5 @@ else{
         'message' => $requestmethod. 'method not allowed',
     ];
     header("HTTP/1.0 405 Method not allowed");
-
     echo json_encode($data);
 }
